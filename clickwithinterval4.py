@@ -32,6 +32,22 @@ def install_packages():
     run_with_confirmation(['sudo', 'apt-get', 'install', 'python3-tk', 'python3-dev'])
     subprocess.run(['wget', 'https://raw.githubusercontent.com/ameenTheprogramer/clickininterval/main/2nd.py'])
 
+
+
+
+def open_xterm_and_execute_script(script_name):
+    command = f'python {script_name}'
+    subprocess.Popen(['xterm', '-e', command])
+
+def run2nd():
+    script_name = '2nd.py'
+    open_xterm_and_execute_script(script_name)
+
+
+
+
+
+
 # def download_file(url, filename):
 #     response = requests.get(url)
 #     if response.status_code == 200:
@@ -92,6 +108,5 @@ def install_packages():
 if __name__ == "__main__":
     install_packages()
     xserver()
-    command = 'python 2nd.py'
-    subprocess.Popen(['xterm', '-e', command])
+    run2nd()
     # main()
