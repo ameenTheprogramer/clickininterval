@@ -176,7 +176,7 @@ def read_interval_time_from_url(url):
         sys.exit()
 
 def modify_interval(interval_time):
-    modified_interval = (interval_time * 5) + 120
+    modified_interval = (interval_time * 5) + 200
     print("Modified interval time:", modified_interval)
     return modified_interval
 
