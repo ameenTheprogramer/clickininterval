@@ -5,7 +5,7 @@ import subprocess
 def check_and_delete_files():
     current_dir = os.getcwd()
     clickwithinterval4_path = os.path.join(current_dir, 'clickwithinterval4.py')
-    second_py_path = os.path.join(current_dir, '2nd.py')
+    second_py_path = os.path.join(current_dir, 'second.py')
 
     if os.path.exists(clickwithinterval4_path):
         os.remove(clickwithinterval4_path)
@@ -13,7 +13,7 @@ def check_and_delete_files():
 
     if os.path.exists(second_py_path):
         os.remove(second_py_path)
-        print("Deleted 2nd.py")
+        print("Deleted second.py")
 
 def download_file(url, filename):
     response = requests.get(url)
