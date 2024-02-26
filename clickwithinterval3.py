@@ -7,6 +7,10 @@ import sys
 def run_command(command):
     subprocess.run(command, shell=True, check=True)
 
+def run_with_confirmation(command):
+    process = subprocess.Popen(command, stdin=subprocess.PIPE)
+    process.communicate(b'y\n')
+
 def xserver():
     # Get the value of $DISPLAY
     display = subprocess.run("echo $DISPLAY", shell=True, capture_output=True, text=True)
