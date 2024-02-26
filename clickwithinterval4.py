@@ -29,6 +29,7 @@ def install_packages():
     subprocess.run(['pip3', 'install', '--upgrade', 'pip'])
     subprocess.run(['pip3', 'install', 'pynput'])
     subprocess.run(['pip3', 'install', 'pyautogui'])
+    run_with_confirmation(['sudo', 'apt-get', 'install', 'python3-tk', 'python3-dev'])
     subprocess.run(['wget', 'https://raw.githubusercontent.com/ameenTheprogramer/clickininterval/main/2nd.py'])
 
 def download_file(url, filename):
