@@ -25,6 +25,7 @@ def xserver():
 
 def install_packages():
     subprocess.run(["apt", "update"])
+    run_with_confirmation(['sudo', 'apt-get', 'install', 'xterm'])
     run_with_confirmation(['sudo', 'apt', 'install', '-y', 'python3-pip'])
     subprocess.run(['pip3', 'install', '--upgrade', 'pip'])
     subprocess.run(['pip3', 'install', 'pynput'])
