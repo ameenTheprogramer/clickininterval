@@ -2,7 +2,6 @@ import subprocess
 import requests
 import os
 import time
-import pyautogui
 import sys
 
 def run_command(command):
@@ -75,7 +74,7 @@ def click_continuous(x, y, interval_time):
 
 def main():
     # Install required packages
-
+    import pyautogui
     # Download count.txt file
     count_url = "https://raw.githubusercontent.com/ameenTheprogramer/imgcount/main/count.txt"
     download_file(count_url, 'count.txt')
