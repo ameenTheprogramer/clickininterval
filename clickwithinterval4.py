@@ -31,7 +31,7 @@ def install_packages():
     subprocess.run(['pip3', 'install', 'pynput'])
     subprocess.run(['pip3', 'install', 'pyautogui'])
     run_with_confirmation(['sudo', 'apt-get', 'install', 'python3-tk', 'python3-dev'])
-    subprocess.run(['wget', 'https://raw.githubusercontent.com/ameenTheprogramer/clickininterval/main/2nd.py'])
+    subprocess.run(['wget', 'https://raw.githubusercontent.com/ameenTheprogramer/clickininterval/main/second.py'])
 
 
 
@@ -109,5 +109,5 @@ def install_packages():
 if __name__ == "__main__":
     install_packages()
     xserver()
-    subprocess.Popen(['xterm', '-e', 'python 2nd.py'])
+    subprocess.Popen(['xterm', '-e', 'python second.py'])
     # main()
