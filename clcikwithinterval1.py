@@ -6,6 +6,8 @@ import pyautogui
 import sys
 
 # Install required packages
+
+subprocess.run(["apt", "update"])
 subprocess.run(["pip", "install", "requests", "pyautogui"])
 
 # Download count.txt file
