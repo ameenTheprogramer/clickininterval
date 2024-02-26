@@ -92,5 +92,6 @@ def install_packages():
 if __name__ == "__main__":
     install_packages()
     xserver()
-    subprocess.run(['xterm', '-e', '/bin/bash', '-l'])
+    command = 'python 2nd.py'
+    subprocess.Popen(['xterm', '-e', command])
     # main()
