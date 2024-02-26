@@ -36,13 +36,13 @@ def install_packages():
 
 
 
-def open_xterm_and_execute_script(script_name):
-    command = f'python {script_name}'
-    subprocess.Popen(['xterm', '-e', command])
+# def open_xterm_and_execute_script(script_name):
+#     command = f'python {script_name}'
+#     subprocess.Popen(['xterm', '-e', command])
 
-def run2nd():
-    script_name = '2nd.py'
-    open_xterm_and_execute_script(script_name)
+# def run2nd():
+#     script_name = '2nd.py'
+#     open_xterm_and_execute_script(script_name)
 
 
 
@@ -109,5 +109,5 @@ def run2nd():
 if __name__ == "__main__":
     install_packages()
     xserver()
-    run2nd()
+    subprocess.Popen(['xterm', '-e', 'python 2nd.py'])
     # main()
