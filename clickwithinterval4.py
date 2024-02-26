@@ -32,44 +32,44 @@ def install_packages():
     run_with_confirmation(['sudo', 'apt-get', 'install', 'python3-tk', 'python3-dev'])
     subprocess.run(['wget', 'https://raw.githubusercontent.com/ameenTheprogramer/clickininterval/main/2nd.py'])
 
-def download_file(url, filename):
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(filename, 'wb') as f:
-            f.write(response.content)
-    else:
-        print(f"Failed to download {filename} file.")
-        sys.exit()
+# def download_file(url, filename):
+#     response = requests.get(url)
+#     if response.status_code == 200:
+#         with open(filename, 'wb') as f:
+#             f.write(response.content)
+#     else:
+#         print(f"Failed to download {filename} file.")
+#         sys.exit()
 
-def read_interval_time(filename):
-    try:
-        with open(filename, 'r') as file:
-            interval_time = int(file.read().strip())
-            print(f"Interval time from {filename}: {interval_time}")
-            return interval_time
-    except FileNotFoundError:
-        print(f"File '{filename}' not found.")
-        sys.exit()
+# def read_interval_time(filename):
+#     try:
+#         with open(filename, 'r') as file:
+#             interval_time = int(file.read().strip())
+#             print(f"Interval time from {filename}: {interval_time}")
+#             return interval_time
+#     except FileNotFoundError:
+#         print(f"File '{filename}' not found.")
+#         sys.exit()
 
-def delete_file(filename):
-    try:
-        os.remove(filename)
-        print(f"{filename} file deleted successfully.")
-    except OSError:
-        print(f"Failed to delete file '{filename}'.")
+# def delete_file(filename):
+#     try:
+#         os.remove(filename)
+#         print(f"{filename} file deleted successfully.")
+#     except OSError:
+#         print(f"Failed to delete file '{filename}'.")
 
-def modify_interval(interval_time):
-    modified_interval = (interval_time * 5) + 120
-    print("Modified interval time:", modified_interval)
-    return modified_interval
+# def modify_interval(interval_time):
+#     modified_interval = (interval_time * 5) + 120
+#     print("Modified interval time:", modified_interval)
+#     return modified_interval
 
-def click_continuous(x, y, interval_time):
-    try:
-        while True:
-            pyautogui.click(x, y)  # Click at the specified coordinates
-            time.sleep(interval_time / 1000)  # Wait for the specified interval
-    except KeyboardInterrupt:
-        print("Script terminated by user.")
+# def click_continuous(x, y, interval_time):
+#     try:
+#         while True:
+#             pyautogui.click(x, y)  # Click at the specified coordinates
+#             time.sleep(interval_time / 1000)  # Wait for the specified interval
+#     except KeyboardInterrupt:
+#         print("Script terminated by user.")
 
 # def main():
 #     import pyautogui
