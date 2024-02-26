@@ -121,6 +121,7 @@ def click_continuous(x, y, interval_time):
         while True:
             pyautogui.click(x, y)  # Click at the specified coordinates
             time.sleep(interval_time)  # Wait for the specified interval (in seconds)
+            print(f'waiuted for {interval_time} sec')
     except KeyboardInterrupt:
         print("Script terminated by user.")
 
