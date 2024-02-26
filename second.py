@@ -136,7 +136,7 @@ def main():
     interval_time = read_interval_time('count.txt')
 
     # Delete the count.txt file
-    delete_file('count.txt')
+    # delete_file('count.txt')
 
     # Modify the interval_time
     modified_interval = modify_interval(interval_time)
