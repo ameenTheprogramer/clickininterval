@@ -38,13 +38,12 @@ def modify_interval(interval_time):
 def click_continuous(x1 , y1, x2, y2 , interval_time):
     try:
         while True:
-            for coord in coordinates:
-                pyautogui.click(x1, y1)  # Click at the specified coordinates
-                time.sleep(1)
-                pyautogui.click(x2, y2)  # Click at the specified coordinates
-                time.sleep(interval_time)  # Wait for the specified interval (in seconds)
-                print(f'Clicked at {coord}, waited for {interval_time} sec')
-                click_continuous(x1 , y1, x2, y2 , interval_time)
+            pyautogui.click(x1, y1)  # Click at the specified coordinates
+            time.sleep(1)
+            pyautogui.click(x2, y2)  # Click at the specified coordinates
+            time.sleep(interval_time)  # Wait for the specified interval (in seconds)
+            print(f'Clicked at {coord}, waited for {interval_time} sec')
+            click_continuous(x1 , y1, x2, y2 , interval_time)
     except KeyboardInterrupt:
         print("Script terminated by user.")
 
