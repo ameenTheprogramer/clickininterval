@@ -48,15 +48,15 @@ def click_continuous(x, y, interval_time):
 def main():
     # Install required packages
     import pyautogui
-    # Download altcount.txt file
-    altcount_url = "https://raw.githubusercontent.com/ameenTheprogramer/imgaltcount/main/altcount.txt"
-    download_file(altcount_url, 'altcount.txt')
+    # Download count.txt file
+    count_url = "https://raw.githubusercontent.com/ameenTheprogramer/imgcount/main/altcount.txt"
+    download_file(count_url, 'altcount.txt')
 
-    # Read the content of altcount.txt file
+    # Read the content of count.txt file
     interval_time = read_interval_time('altcount.txt')
 
-    # Delete the altcount.txt file
-    # delete_file('altcount.txt')
+    # Delete the count.txt file
+    # delete_file('count.txt')
 
     # Modify the interval_time
     modified_interval = modify_interval(interval_time)
