@@ -35,14 +35,18 @@ def modify_interval(interval_time):
     print("Modified interval time:", modified_interval)
     return modified_interval
 
-def click_continuous(x1 , y1, x2, y2 , interval_time):
+def click_continuous(x1 , y1, x2, y2 ,x3 ,y3 ,x4 ,y4 , interval_time):
     try:
         while True:
             pyautogui.click(x1, y1)  # Click at the specified coordinates
             time.sleep(1)
             pyautogui.click(x2, y2)  # Click at the specified coordinates
+            time.sleep(1)
+            pyautogui.click(x3, y3)
+            time.sleep(1)
+            pyautogui.click(x4, y4)
             time.sleep(interval_time)  # Wait for the specified interval (in seconds)
-            print(f'Clicked  , waited for {interval_time} sec')
+            print(f'Clicked , waited for {interval_time} sec')
             click_continuous(x1 , y1, x2, y2 , interval_time)
     except KeyboardInterrupt:
         print("Script terminated by user.")
@@ -66,14 +70,23 @@ def main():
 
     # Define the coordinates
     #coordinates = [(83, 306), (747, 305)]
-    crd1x = 83
-    crd1y = 306
+    crd1x = 85
+    crd1y = 240
   
-    crd2x = 747
-    crd2y = 305
+    crd2x = 82
+    crd2y = 546
+
+    crd3x = 746
+    crd3y = 239
+  
+    crd4x = 747
+    crd4y = 541
 
     # Click continuously at the specified coordinates with the modified interval
-    click_continuous(crd1x, crd1y , crd2x , crd2y , modified_interval)
+    click_continuous(crd1x, crd1y , crd2x , crd2y , crd3x, crd3y , crd4x , crd4y , modified_interval)
 
 if __name__ == "__main__":
     main()
+
+
+
