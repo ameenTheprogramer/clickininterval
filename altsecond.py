@@ -11,7 +11,7 @@ def download_file(url, filename):
             f.write(response.content)
     else:
         print(f"Failed to download {filename} file.")
-        sys.exit()
+        sys.exit(1)
 
 def read_interval_time(filename):
     try:
@@ -21,14 +21,7 @@ def read_interval_time(filename):
             return interval_time
     except FileNotFoundError:
         print(f"File '{filename}' not found.")
-        sys.exit()
-
-def delete_file(filename):
-    try:
-        os.remove(filename)
-        print(f"{filename} file deleted successfully.")
-    except OSError:
-        print(f"Failed to delete file '{filename}'.")
+        sys.exit(1)
 
 def modify_interval(interval_time):
     modified_interval = (interval_time * 5) + 120
@@ -39,26 +32,21 @@ def click_continuous(x, y, interval_time):
     try:
         while True:
             pyautogui.click(x, y)  # Click at the specified coordinates
+            print(f'Waited for {interval_time} sec')
             time.sleep(interval_time)  # Wait for the specified interval (in seconds)
-            print(f'waiuted for {interval_time} sec')
             click_continuous(x, y, interval_time)
     except KeyboardInterrupt:
         print("Script terminated by user.")
 
 def main():
-    # Install required packages
-    import pyautogui
-    # Download count.txt file
-    count_url = "https://raw.githubusercontent.com/ameenTheprogramer/imgcount/main/altcount.txt"
-    download_file(count_url, 'altcount.txt')
+    # Download the configuration file
+    config_url = "https://raw.githubusercontent.com/ameenTheprogramer/imgcount/main/altcount.txt"
+    download_file(config_url, 'altcount.txt')
 
-    # Read the content of count.txt file
+    # Read the interval time from the configuration file
     interval_time = read_interval_time('altcount.txt')
 
-    # Delete the count.txt file
-    # delete_file('count.txt')
-
-    # Modify the interval_time
+    # Modify the interval time
     modified_interval = modify_interval(interval_time)
 
     # Click continuously at the specified coordinates with the modified interval
