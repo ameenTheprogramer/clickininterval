@@ -112,7 +112,7 @@ def delete_file(filename):
         print(f"Failed to delete file '{filename}'.")
 
 def modify_interval(interval_time):
-    modified_interval = (interval_time * 5) + 150
+    modified_interval = (interval_time * 5) + 180
     print("Modified interval time:", modified_interval)
     return modified_interval
 
